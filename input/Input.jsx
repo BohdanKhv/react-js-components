@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import './styles/Input.css';
 
-const Input = ({type, name, label, value, onChange}) => {
+const Input = ({children, icon, type, name, label, value, onChange}) => {
     const [isFocused, setIsFocused] = useState(false);
     const inputRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (event.target.name !== name && inputRef.current.value.length === 0) {
+            if (event.target.name !== name) {
                 setIsFocused(false);
             }
         }
@@ -21,15 +21,18 @@ const Input = ({type, name, label, value, onChange}) => {
 
     return (
         <div
-            className="input"
+            className={`input${isFocused ? ' focused' : ''}`}
             onClick={() => {
                 setIsFocused(true);
                 inputRef.current.focus();
             }}
         >
+            <div className="input-pre">
+                {/* {children} */}
+            </div>
             <input
                 ref={inputRef}
-                className={`${isFocused ? 'focused' : ''}`}
+                className={`${isFocused || inputRef.current.value.length !== 0 ? 'focused' : ''}`}
                 type={type}
                 name={name}
                 value={value}
@@ -37,8 +40,9 @@ const Input = ({type, name, label, value, onChange}) => {
                 placeholder={label}
             />
             <div
-                className={`input-label${isFocused ? ' focused' : ''}`}
+                className={`input-label${isFocused || inputRef.current.value.length !== 0 ? ' focused' : ''}`}
             >
+                {icon}
                 {label}
             </div>
         </div>
