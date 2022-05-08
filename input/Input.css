@@ -55,3 +55,20 @@
     opacity: 0.8;
     transform: scale(0.75) translateX(-10px);
 }
+
+.input-pre {
+    opacity: 0;
+    padding: 16px 0px 0px 0px;
+    height: 44px;
+    font-size: 1rem;
+}
+
+.input-pre p {
+    padding-top: 8px;
+    padding-right: 4px;
+    font-size: 1.1rem;
+}
+
+.input-pre.focused {
+    opacity: 1;
+}
