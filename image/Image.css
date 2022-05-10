@@ -1,0 +1,36 @@
+.image-overlay {
+    position: fixed;
+    inset: 0px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    z-index: 99999;
+    background-color: #70707070;
+    width: 100%;
+    height: 100%;
+    animation-duration: var(--transition-duration);
+    animation-name: opacity;
+    text-align: start;
+}
+
+.image-overlay .image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-overlay .close {
+    right: 5vw;
+    top: 5vh;
+}
+
+.image-btn {
+    cursor: pointer;
+    transition: var(--transition-duration);
+}
+
+.image-btn:hover {
+    -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+}
