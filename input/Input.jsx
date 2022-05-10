@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './styles/Input.css';
 
-const Input = ({children, icon, type, name, label, value, onChange}) => {
+const Input = ({children, icon, type, name, label, value, onChange, bodyStyle, inputStyle, labelStyle}) => {
     const [isFocused, setIsFocused] = useState(false);
     const inputRef = useRef(null);
 
@@ -26,6 +26,7 @@ const Input = ({children, icon, type, name, label, value, onChange}) => {
                 setIsFocused(true);
                 inputRef.current.focus();
             }}
+            style={bodyStyle}
         >
             {children && (
                 <div className={`input-pre${isFocused || ( inputRef.current && inputRef.current.value.length !== 0 ) ? ' focused' : ''}`}>
@@ -35,6 +36,7 @@ const Input = ({children, icon, type, name, label, value, onChange}) => {
                 </div>
             )}
             <input
+                style={inputStyle}
                 ref={inputRef}
                 className={`${isFocused || ( inputRef.current && inputRef.current.value.length !== 0 ) ? 'focused' : ''}`}
                 type={type}
@@ -44,6 +46,7 @@ const Input = ({children, icon, type, name, label, value, onChange}) => {
                 placeholder={label}
             />
             <div
+                style={labelStyle}
                 className={`input-label${isFocused || ( inputRef.current && inputRef.current.value.length !== 0 ) ? ' focused' : ''}`}
             >
                 {icon}

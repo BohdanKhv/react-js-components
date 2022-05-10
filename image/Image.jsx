@@ -29,6 +29,7 @@ const Image = ({image, alt, classList}) => {
                 </div>
                 <div className="image-wrapper">
                     <img
+                        className="image-content"
                         src={image}
                         alt={alt}
                     />
