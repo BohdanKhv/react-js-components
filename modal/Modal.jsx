@@ -17,7 +17,7 @@ const Modal = ({children, bodyStyles, style, modalIsOpen, contentLabel, setModal
     return (
         <>
         {modalIsOpen ? (
-        <div className="modal-overlay" onClick={onClickOutside} style={style}>
+        <div className="modal-overlay" onMouseDown={onClickOutside} style={style}>
             <div className="modal-wrapper">
                 <div className="modal-body">
                     <div className="modal-header">
