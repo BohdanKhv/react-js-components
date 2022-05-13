@@ -12,12 +12,12 @@ const Navbar = ({ links }) => {
                 <Link
                     key={`navbar-${link.name+index}`}
                     to={`${link.path}`} 
-                    className={`navbar-item${location === link.path ? ' active' : ''}`}
+                    className={`navbar-item${location === link.path ? ' active' : ''}${!link.notify ? ' notify' : ''}`}
                 >
                     { link.icon }
                     { link.name }
-                    { link.count ? (
-                        <p>{link ? link.count : 0}</p>
+                    { link.count !== null ? (
+                        <p className="text-secondary">{link.count}</p>
                     ) : null}
                 </Link>
             ))}
