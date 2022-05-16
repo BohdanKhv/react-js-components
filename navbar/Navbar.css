@@ -11,13 +11,13 @@
 
 .navbar-item {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     flex-grow: 1;
     cursor: pointer;
     padding: 0.5rem 1.25rem;
     font-weight: 500;
-    margin-top: -1px;
+    margin-top: -2px;
     border-top: 2px solid var(--color-tertiary);
     color: var(--text-dark);
     text-decoration: none;
@@ -27,8 +27,12 @@
 }
 
 .navbar-item svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.navbar-name {
+    margin-left: 5px;
 }
 
 .navbar-item:hover {
@@ -56,4 +60,14 @@
     border-radius: 50%;
     position: absolute;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar-item {
+        flex-direction: column;
+    }
+
+    .navbar-name {
+        margin-left: 0px;
+    }
 }

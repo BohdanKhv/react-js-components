@@ -25,6 +25,8 @@
     background-color: var(--color-main);
     min-width: 650px;
     max-height: 90vh;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
 }
 
 .modal-body .modal-header {
@@ -68,6 +70,12 @@
 
 .modal-spinner svg {
     animation: spin 1s linear infinite;
+}
+
+.modal-body .modal-content.modal-scroll {
+    overflow-y: auto;
+    max-height: calc(90vh - 100px);
+    margin: 0;
 }
 
 @media (max-width: 768px) {
