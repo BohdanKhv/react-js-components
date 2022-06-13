@@ -31,8 +31,8 @@
 }
 
 .btn.btn-text {
-    color: var(--text-dark);
-    fill: var(--text-dark);
+    color: var(--text-dark)!important;
+    fill: var(--text-dark)!important;
     border: 1px solid transparent!important;
     background-color: transparent!important;
 }
@@ -55,6 +55,22 @@
 .btn.btn-outline.btn-warning,
 .btn.btn-outline.btn-secondary {
     box-shadow: none;
+}
+
+.btn.btn-text:hover:hover,
+.btn.btn-text.btn-danger:hover,
+.btn.btn-text.btn-success:hover,
+.btn.btn-text.btn-info:hover,
+.btn.btn-text.btn-warning:hover,
+.btn.btn-text.btn-secondary:hover,
+.btn.btn-outline:hover:hover,
+.btn.btn-outline.btn-danger:hover,
+.btn.btn-outline.btn-success:hover,
+.btn.btn-outline.btn-info:hover,
+.btn.btn-outline.btn-warning:hover,
+.btn.btn-outline.btn-secondary:hover {
+    color: #000000!important;
+    fill: #000000!important;
 }
 
 .btn.btn-text:hover {
@@ -183,8 +199,8 @@
 
 .btn.btn-outline.btn-secondary {
     background: transparent;
-    color: var(--color-dark);
-    fill: var(--color-dark);
+    color: var(--text-dark);
+    fill: var(--text-dark);
     border-color: var(--text-dark);
 }
 
@@ -197,7 +213,7 @@
 
 .btn.btn-outline:hover {
     background: var(--color-primary);
-    color: var(--color-primary);
+    color: #000000;
     fill: var(--color-primary);
 }
 
@@ -254,12 +270,14 @@
 
 .btn.btn-sm .btn-end-icon svg,
 .btn.btn-sm .btn-start-icon svg {
+    font-size: 18px;
     width: 0.9em;
     height: 0.9em;
 }
 
 .btn.btn-lg .btn-end-icon svg,
 .btn.btn-lg .btn-start-icon svg {
+    font-size: 22px;
     width: 1.15em;
     height: 1.15em;
 }
@@ -272,12 +290,14 @@
 }
 
 .btn .btn-start-icon svg {
+    font-size: 20px;
     width: 1em;
     height: 1em;
     margin-right: 8px;
 }
 
 .btn .btn-end-icon svg {
+    font-size: 20px;
     width: 1em;
     height: 1em;
     margin-left: 8px;
