@@ -1,0 +1,109 @@
+.drawer-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 31px;
+    text-decoration: none;
+    margin: 0px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    font-weight: 400;
+    display: flex;
+    color: var(--text-dark);
+    fill: var(--color-primary);
+    transition: var(--transition-duration);
+    border-radius: var(--border-radius);
+    margin: 5px 10px;
+    cursor: pointer;
+    background-color: transparent;
+    user-select: none;
+}
+
+.drawer-item.drawer-droppable-item {
+    opacity: 1;
+}
+
+.drawer-item.drawer-item-title {
+    opacity: 0.75;
+    letter-spacing: 0.1rem;
+    color: var(--text-dark);
+    fill: var(--color-primary);
+    font-weight: 600;
+    cursor: text;
+}
+
+.drawer-item.drawer-item-title:hover {
+    opacity: 0.75;
+    background-color: transparent;
+    color: var(--text-dark);
+    fill: var(--color-primary);
+}
+
+.drawer-item-children .drawer-item:hover,
+.drawer-item:hover {
+    opacity: 0.8;
+    background-color: var(--color-secondary);
+    color: var(--text-dark);
+    fill: var(--color-primary);
+}
+
+.drawer-item-children .drawer-item:active,
+.drawer-item:active {
+    opacity: 1;
+}
+
+.drawer-item.drawer-has-icon {
+    padding-left: 5px;
+}
+
+.drawer-item .drawer-item-drop,
+.drawer-item .drawer-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.drawer-item .drawer-item-drop svg,
+.drawer-item.drawer-has-icon svg {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+}
+
+.drawer-item .drawer-item-label {
+    flex-grow: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drawer-item-drop {
+    transition: transform var(--transition-duration);
+}
+
+.drawer-item-open .drawer-item-drop {
+    transform: rotate(90deg);
+}
+
+.drawer-item-children .drawer-item {
+    opacity: 0.75;
+}
+
+.drawer-item-children {
+    margin: 12px 0px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.drawer-item-open .drawer-item-children {
+    animation: opacity-animation forwards var(--transition-duration) ease-in-out;
+}
+
+@keyframes opacity-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
