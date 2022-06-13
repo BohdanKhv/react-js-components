@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './styles/DrawerItem.css'
 
 const DrawerItem = ({children, label, icon, to, isTitle, droppable }) => {
@@ -7,12 +8,20 @@ const DrawerItem = ({children, label, icon, to, isTitle, droppable }) => {
     return (
         <>
         {!droppable ? 
-            <a href={to || undefined} className={`drawer-item${icon ? ' drawer-has-icon' : ''}${isTitle ? ' drawer-item-title' : ''}`}>
-                {icon ? <span className="drawer-item-icon">{icon}</span> : null}
-                <div className="drawer-item-label">
-                    {label}
+            isTitle ?
+                <div to={to || '/'} className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title`}>
+                    {icon ? <span className="drawer-item-icon">{icon}</span> : null}
+                    <div className="drawer-item-label">
+                        {label}
+                    </div>
                 </div>
-            </a>
+            :
+                <Link to={to || '/'} className={`drawer-item${icon ? ' drawer-has-icon' : ''}`}>
+                    {icon ? <span className="drawer-item-icon">{icon}</span> : null}
+                    <div className="drawer-item-label">
+                        {label}
+                    </div>
+                </Link>
         :
             <div className={open ? 'drawer-item-open' : undefined }>
                 <div 

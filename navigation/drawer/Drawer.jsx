@@ -19,7 +19,7 @@ const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => 
 
     return (
         <div
-            className={`drawer${side ? ` drawer-${side}`: ' drawer-left'}${isOpen ? ' drawer-open' : ' drawer-closed'}`}
+            className={`drawer${side ? ` drawer-${side}`: ' drawer-left'}${window.innerWidth < 768 ? isOpen ? ' drawer-open' : ' drawer-closed' : ''}`}
         >
             <div>
                 {(icon || label) &&
