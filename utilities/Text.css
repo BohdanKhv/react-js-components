@@ -36,3 +36,13 @@
 .fs-6 {
     font-size: 0.5rem;
 }
+
+/* Hover */
+
+.text-hover {
+    font-weight: 500;
+    border-radius: var(--border-radius);
+}
+.text-hover:hover {
+    color: var(--color-primary);
+}

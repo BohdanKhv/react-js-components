@@ -63,3 +63,41 @@
     font-size: 0.9em;
     opacity: 0.7;
 }
+
+.drawer.drawer-closed {
+    animation: closeDrawer var(--transition-duration);
+    animation-fill-mode: forwards;
+}
+
+.drawer.drawer-open {
+    animation: openDrawer var(--transition-duration);
+    animation-fill-mode: forwards;
+}
+
+.drawer.drawer-closed {
+    animation: closeDrawer var(--transition-duration);
+    animation-fill-mode: forwards;
+}
+
+.drawer.drawer-open {
+    animation: openDrawer var(--transition-duration);
+    animation-fill-mode: forwards;
+}
+
+@keyframes openDrawer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes closeDrawer {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
