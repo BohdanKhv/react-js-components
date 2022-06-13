@@ -14,7 +14,7 @@ const Button = ({
 
     return (
         <button
-            className={`btn${variant ? ` btn-${variant}` : ''}${size ? ` btn-${size}` : ''}${color ? ` btn-${color}` : ''}${disabled ? ' disabled' : ''}${loading ? ' loading' : ''}`}
+            className={`btn${variant ? ` btn-${variant}` : ''}${size ? ` btn-${size}` : ''}${color ? ` btn-${color}` : ''}${disabled ? ' btn-disabled' : ''}${loading ? ' btn-loading' : ''}`}
             onClick={onClick ? onClick : null}
             disabled={disabled}
         >
