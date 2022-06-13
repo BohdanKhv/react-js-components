@@ -2,12 +2,17 @@ import { useEffect } from 'react';
 import { arrowRepeatIcon, closeIcon } from '../../constance/icons';
 import './styles/Modal.css';
 
-const Modal = ({children, bodyStyles, style, modalIsOpen, contentLabel, setModalIsOpen, actionBtnText, onSubmit, actionDangerBtnText, onSubmitDanger, disableClose, isLoading, notCloseOnUpdate, isError, errMsg, isScroll}) => {
+const Modal = ({children, bodyStyles, headerNone, style, modalIsOpen, contentLabel, setModalIsOpen, actionBtnText, onSubmit, actionDangerBtnText, onSubmitDanger, disableClose, isLoading, notCloseOnUpdate, isError, errMsg, isScroll, onClose}) => {
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+        onClose && onClose();
+    }
 
     const onClickOutside = (e) => {
         if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('modal-wrapper')) {
             if(!disableClose || disableClose === false) {
-                setModalIsOpen(false);
+                closeModal();
             } else {
                 console.log('modal is disabled');
             }
@@ -17,10 +22,23 @@ const Modal = ({children, bodyStyles, style, modalIsOpen, contentLabel, setModal
     useEffect(() => {
         if(!isError) {
             if(!isLoading && !notCloseOnUpdate) {
-                setModalIsOpen(false);
+                closeModal();
             }
         }
     }, [isLoading, isError]);
+
+
+    useEffect(() => {
+        if(modalIsOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        }
+    }, [modalIsOpen])
 
     return (
         <>
@@ -28,14 +46,16 @@ const Modal = ({children, bodyStyles, style, modalIsOpen, contentLabel, setModal
         <div className="modal-overlay" onMouseDown={onClickOutside} style={style}>
             <div className="modal-wrapper">
                 <div className="modal-body">
+                    {!headerNone ? (
                     <div className="modal-header">
                         <h3>{contentLabel}</h3>
                         {disableClose ? null : (
-                            <div className="btn-icon btn-icon-danger" onClick={() => {setModalIsOpen(false)} }>
+                            <div className="btn-icon btn-icon-danger" onClick={closeModal}>
                                 {closeIcon}
                             </div>
                         )}
                     </div>
+                    ) : null}
                     <div className={`modal-content${isScroll ? ' modal-scroll' : ''}`} style={bodyStyles}>
                         <div className="h-100">
                             {children}
