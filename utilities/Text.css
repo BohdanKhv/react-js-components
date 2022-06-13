@@ -1,0 +1,38 @@
+
+/* Align */
+
+.text-wrap {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-end {
+    text-align: end;
+}
+.text-start {
+    text-align: start;
+}
+
+/* Sizes */
+
+.fs-1 {
+    font-size: 3rem;
+}
+.fs-2 {
+    font-size: 1.5rem;
+}
+.fs-3 {
+    font-size: 1.25rem;
+}
+.fs-4 {
+    font-size: 1rem;
+}
+.fs-5 {
+    font-size: 0.75rem;
+}
+.fs-6 {
+    font-size: 0.5rem;
+}
