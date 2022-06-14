@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { closeIcon } from '../../../constants/icons'
+import { IconButton } from '../../'
 import './styles/Drawer.css'
 
 const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => {
@@ -24,19 +25,24 @@ const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => 
             <div>
                 {(icon || label) &&
                     <div className="drawer-header">
-                        {window.innerWidth < 768 ? 
-                            <div className="drawer-header-icon" onClick={() => setIsOpen(false)}>
-                                {closeIcon}
-                            </div>
-                        :
-                            icon ? <Link to='/' className="drawer-header-icon">{icon}</Link> : null
-                        }
-                        {label ? <div className="drawer-header-label">
+                        {icon && <Link to='/' className="drawer-header-icon">{icon}</Link>}
+                        {label && 
+                        <div className="drawer-header-label">
                             {label} 
                             <div className="drawer-header-secondary">
                                 {secondary}
                             </div>
-                            </div> : null}
+                        </div>}
+                        {(window.innerWidth < 768 && isOpen) &&
+                            <div className="flex align-center">
+                                <IconButton
+                                    icon={closeIcon}
+                                    color="secondary"
+                                    size="sm"
+                                    onClick={() => setIsOpen(false)}
+                                />
+                            </div>
+                        }
                     </div>
                 }
                 {children}

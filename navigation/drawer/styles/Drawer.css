@@ -38,6 +38,8 @@
 }
 
 .drawer .drawer-header {
+    min-height: 40px;
+    max-height: 40px;
     display: flex;
     padding: 12px 16px;
     border-bottom: 1px solid var(--color-border);
@@ -60,11 +62,16 @@
 
 .drawer .drawer-header-label {
     flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .drawer .drawer-header-secondary {
     font-size: 0.9em;
     opacity: 0.7;
+    overflow: hidden;
 }
 
 .drawer.drawer-open {

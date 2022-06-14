@@ -5,18 +5,29 @@ import './styles/DrawerItem.css'
 const DrawerItem = ({children, label, icon, to, isTitle, droppable, isOpen }) => {
     const [open, setOpen] = useState(isOpen ? isOpen : false)
 
+    const closeDrawer = () => {
+        if (document.querySelector('.close-drawer')) document.querySelector('.close-drawer').click();
+    }
+
     return (
         <>
         {!droppable ? 
             isTitle ?
-                <div to={to || '/'} className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title`}>
+                <div 
+                to={to || '/'} 
+                className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title`}
+                >
                     {icon ? <span className="drawer-item-icon">{icon}</span> : null}
                     <div className="drawer-item-label">
                         {label}
                     </div>
                 </div>
             :
-                <Link to={to || '/'} className={`drawer-item${icon ? ' drawer-has-icon' : ''}`}>
+                <Link 
+                    to={to || '/'} 
+                    className={`drawer-item${icon ? ' drawer-has-icon' : ''}`}
+                    onClick={closeDrawer}
+                >
                     {icon ? <span className="drawer-item-icon">{icon}</span> : null}
                     <div className="drawer-item-label">
                         {label}
