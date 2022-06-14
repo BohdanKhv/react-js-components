@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/DrawerItem.css'
 
-const DrawerItem = ({children, label, icon, to, isTitle, droppable }) => {
-    const [open, setOpen] = useState(false)
+const DrawerItem = ({children, label, icon, to, isTitle, droppable, isOpen }) => {
+    const [open, setOpen] = useState(isOpen ? isOpen : false)
 
     return (
         <>

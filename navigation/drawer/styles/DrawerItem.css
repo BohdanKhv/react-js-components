@@ -24,11 +24,9 @@
 }
 
 .drawer-item.drawer-item-title {
-    margin-top: 12px;
-    margin-bottom: 12px;
     opacity: 0.75;
     letter-spacing: 0.1rem;
-    color: var(--text-dark);
+    color: var(--color-primary);
     fill: var(--color-primary);
     font-weight: 600;
     cursor: text;
@@ -37,7 +35,7 @@
 .drawer-item.drawer-item-title:hover {
     opacity: 0.75!important;
     background-color: transparent!important;
-    color: var(--text-dark);
+    color: var(--color-primary)!important;
     fill: var(--color-primary);
 }
 
