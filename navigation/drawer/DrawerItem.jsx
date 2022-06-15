@@ -6,7 +6,7 @@ const DrawerItem = ({children, label, icon, to, isTitle, size, droppable, isOpen
     const [open, setOpen] = useState(isOpen ? isOpen : false)
 
     const closeDrawer = () => {
-        if (document.querySelector('.close-drawer')) document.querySelector('.close-drawer').click();
+        if (document.querySelector('.close-drawer') && window.innerWidth < 768) document.querySelector('.close-drawer').click();
     }
 
     return (

@@ -29,10 +29,10 @@ const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => 
                         {icon && 
                         <div 
                             onClick={() => {
-                                if(document.querySelector('.close-drawer')) {
+                                if(document.querySelector('.close-drawer') && window.innerWidth < 768) {
                                     document.querySelector('.close-drawer').click();
-                                    navigate('/')
                                 }
+                                navigate('/')
                             }} 
                             className="drawer-header-icon">{icon}</div>
                         }
