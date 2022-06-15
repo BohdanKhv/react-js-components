@@ -15,6 +15,7 @@
     position: relative;
     overflow-y: hidden;
     scroll-behavior: smooth;
+    overscroll-behavior: contain;
 }
 .chips-flex::-webkit-scrollbar {
     display: none;

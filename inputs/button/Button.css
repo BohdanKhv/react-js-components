@@ -22,7 +22,7 @@
     padding: 6px 16px;
     font-size: 0.875rem;
     border-radius: var(--border-radius);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: var(--transition-duration);
     border: 1px solid var(--color-primary);
     background-color: var(--color-primary);
     color: #000000;
@@ -39,7 +39,7 @@
 
 .btn.btn-text.btn-secondary {
     color: var(--text-dark);
-    fill: var(--text-dark);
+    fill: var(--color-secondary);
 }
 
 .btn.btn-text:hover,
@@ -94,9 +94,9 @@
 }
 
 .btn.btn-text.btn-secondary:hover {
-    background: var(--text-dark)!important;
-    color: var(--text-light)!important;
-    fill: var(--text-light)!important;
+    background: var(--color-secondary)!important;
+    color: var(--text-dark)!important;
+    fill: var(--text-dark)!important;
 }
 
 .btn.btn-btn-outline {
@@ -136,10 +136,10 @@
 }
 
 .btn.btn-secondary {
-    background: var(--text-dark);
-    border-color: var(--text-dark);
-    color: var(--text-light);
-    fill: var(--text-light);
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--text-dark);
+    fill: var(--text-dark);
 }
 
 .btn.btn-danger {
@@ -199,9 +199,9 @@
 
 .btn.btn-outline.btn-secondary {
     background: transparent;
-    color: var(--text-dark);
-    fill: var(--text-dark);
-    border-color: var(--text-dark);
+    color: var(--color-dark);
+    fill: var(--color-dark);
+    border-color: var(--color-secondary);
 }
 
 .btn.btn-outline.btn-success {
@@ -242,9 +242,9 @@
 }
 
 .btn.btn-outline.btn-secondary:hover {
-    background: var(--text-dark);
-    color: var(--text-light);
-    fill: var(--text-light);
+    background: var(--color-secondary);
+    color: var(--color-dark)!important;
+    fill: var(--color-dark)!important;
 }
 
 .btn.btn-outline.btn-success:hover {
@@ -304,10 +304,10 @@
 }
 
 .btn:hover {
-    filter: brightness(0.9);
+    opacity: 0.9;
     box-shadow: var(--box-shadow);
 }
 
 .btn:active {
-    filter: contrast(1.1);
+    opacity: 1;
 }

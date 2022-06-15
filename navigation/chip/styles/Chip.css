@@ -8,8 +8,10 @@
     font-size: 14px;
     align-items: center;
     justify-content: center;
+    text-transform: capitalize;
     cursor: pointer;
     transition-duration: var(--transition-duration);
+    min-width: max-content;
 }
 .chip.chip-active {
     background-color: var(--text-dark);
