@@ -4,6 +4,7 @@
 }
 
 .chips-flex {
+    flex-grow: 1;
     display: flex;
     overflow-x: scroll;
     height: 55px;
