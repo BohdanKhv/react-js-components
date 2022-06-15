@@ -1,14 +1,15 @@
 import './styles/Chip.css'
 
-const Chip = ({ label, onClick, active }) => {
+const Chip = ({ label, onClick, active, to }) => {
     return (
-        <div 
+        <a 
             className={`chip${active ? ' chip-active' : ''}`}
+            href={to || undefined}
             onClick={onClick}
             title={label}
         >
             {label}
-        </div>
+        </a>
     )
 }
 

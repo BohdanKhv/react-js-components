@@ -12,6 +12,8 @@
     cursor: pointer;
     transition-duration: var(--transition-duration);
     min-width: max-content;
+    text-decoration: none;
+    color: var(--text-dark);
 }
 .chip.chip-active {
     background-color: var(--text-dark);
