@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { closeIcon } from '../../../constants/icons'
 import { IconButton } from '../../'
 import './styles/Drawer.css'
 
 const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => {
+    const navigate = useNavigate()
 
     const handleResize = () => {
         setIsOpen(window.innerWidth > 768)
@@ -25,7 +26,16 @@ const Drawer = ({children, side, icon, label, secondary, isOpen, setIsOpen}) => 
             <div>
                 {(icon || label) &&
                     <div className="drawer-header">
-                        {icon && <Link to='/' className="drawer-header-icon">{icon}</Link>}
+                        {icon && 
+                        <div 
+                            onClick={() => {
+                                if(document.querySelector('.close-drawer')) {
+                                    document.querySelector('.close-drawer').click();
+                                    navigate('/')
+                                }
+                            }} 
+                            className="drawer-header-icon">{icon}</div>
+                        }
                         {label && 
                         <div className="drawer-header-label">
                             {label} 

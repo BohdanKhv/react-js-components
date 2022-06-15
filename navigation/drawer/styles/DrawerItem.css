@@ -26,8 +26,8 @@
 .drawer-item.drawer-item-title {
     opacity: 0.75;
     letter-spacing: 0.1rem;
-    color: var(--color-primary);
-    fill: var(--color-primary);
+    color: var(--text-dark);
+    fill: var(--text-dark);
     font-weight: 600;
     cursor: text;
 }
@@ -35,8 +35,18 @@
 .drawer-item.drawer-item-title:hover {
     opacity: 0.75!important;
     background-color: transparent!important;
-    color: var(--color-primary)!important;
-    fill: var(--color-primary);
+    color: var(--text-dark)!important;
+    fill: var(--text-dark);
+}
+
+.drawer-item.drawer-item-title-lg {
+    font-size: 22px;
+}
+.drawer-item.drawer-item-title-md {
+    font-size: 20px;
+}
+.drawer-item.drawer-item-title-sm {
+    font-size: 18px;
 }
 
 .drawer-item-children .drawer-item:hover,
@@ -93,7 +103,7 @@
 
 .drawer-item-children {
     margin: 12px 0px;
-    border-bottom: 1px solid var(--color-border);
+    /* border-bottom: 1px solid var(--color-border); */
 }
 
 .drawer-item-open .drawer-item-children {

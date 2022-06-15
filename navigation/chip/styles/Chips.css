@@ -54,3 +54,11 @@
     position: absolute;
     right: 44px;
 }
+
+.chips .chip:first-of-type {
+    margin-left: 24px;
+}
+
+.chips .chip:last-of-type {
+    margin-right: 24px;
+}

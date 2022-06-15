@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/DrawerItem.css'
 
-const DrawerItem = ({children, label, icon, to, isTitle, droppable, isOpen }) => {
+const DrawerItem = ({children, label, icon, to, isTitle, size, droppable, isOpen }) => {
     const [open, setOpen] = useState(isOpen ? isOpen : false)
 
     const closeDrawer = () => {
@@ -15,7 +15,7 @@ const DrawerItem = ({children, label, icon, to, isTitle, droppable, isOpen }) =>
             isTitle ?
                 <div 
                 to={to || '/'} 
-                className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title`}
+                className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title${size ? ` drawer-item-title-${size}` : ''}`}
                 >
                     {icon ? <span className="drawer-item-icon">{icon}</span> : null}
                     <div className="drawer-item-label">
