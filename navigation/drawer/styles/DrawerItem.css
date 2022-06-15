@@ -19,6 +19,10 @@
     user-select: none;
 }
 
+.drawer-item .drawer-item-count {
+    margin: 0 12px;
+}
+
 .drawer-item.drawer-droppable-item {
     opacity: 1;
 }
