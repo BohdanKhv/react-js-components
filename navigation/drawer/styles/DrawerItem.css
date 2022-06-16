@@ -13,7 +13,7 @@
     fill: var(--color-primary);
     transition: var(--transition-duration);
     border-radius: var(--border-radius);
-    margin: 5px 10px;
+    margin: 12px 10px;
     cursor: pointer;
     background-color: transparent;
     user-select: none;
@@ -43,13 +43,13 @@
     fill: var(--text-dark);
 }
 
-.drawer-item.drawer-item-title-lg {
+.drawer-item.drawer-item-title-lg .drawer-item-label {
     font-size: 22px;
 }
-.drawer-item.drawer-item-title-md {
+.drawer-item.drawer-item-title-md .drawer-item-label {
     font-size: 20px;
 }
-.drawer-item.drawer-item-title-sm {
+.drawer-item.drawer-item-title-sm .drawer-item-label {
     font-size: 18px;
 }
 
@@ -91,6 +91,10 @@
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    display: flex;
+    align-items: center;
 }
 
 .drawer-item-drop {

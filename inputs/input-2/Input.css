@@ -27,6 +27,8 @@
     line-height: 1;
     left: 16px;
     display: flex;
+    user-select: none;
+    align-items: center;
 }
 
 .input-container label svg {
