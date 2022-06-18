@@ -21,7 +21,7 @@
 .drawer::-webkit-scrollbar-track {
     background: var(--color-tertiary);
     border-right: 1px solid var(--color-main);
-    margin-top: 85px;
+    margin-top: 65px;
 }
 .drawer::-webkit-scrollbar-thumb {
     background-color: var(--color-border);

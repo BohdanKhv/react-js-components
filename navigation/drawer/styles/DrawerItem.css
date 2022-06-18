@@ -1,7 +1,8 @@
 .drawer-item {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 31px;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 38px;
     text-decoration: none;
     margin: 0px;
     font-size: 0.875rem;
@@ -21,6 +22,13 @@
 
 .drawer-item .drawer-item-count {
     margin: 0 12px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .drawer-item.drawer-droppable-item {
@@ -70,6 +78,7 @@
     padding-left: 5px;
 }
 
+.drawer-item .drawer-item-img,
 .drawer-item .drawer-item-drop,
 .drawer-item .drawer-item-icon {
     font-size: 21px;
@@ -92,7 +101,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 0.9rem;
-    line-height: 0.9rem;
+    line-height: 1rem;
     display: flex;
     align-items: center;
 }
@@ -124,5 +133,12 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .drawer-item {
+        padding-top: 18px;
+        padding-bottom: 18px;
     }
 }

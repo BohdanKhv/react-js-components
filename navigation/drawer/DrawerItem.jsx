@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Avatar } from '../../'
 import './styles/DrawerItem.css'
 
-const DrawerItem = ({children, label, icon, to, isTitle, size, droppable, isOpen, count }) => {
+const DrawerItem = ({children, label, icon, to, isTitle, size, droppable, isOpen, count, image }) => {
     const [open, setOpen] = useState(isOpen ? isOpen : false)
 
     const closeDrawer = () => {
@@ -15,35 +16,38 @@ const DrawerItem = ({children, label, icon, to, isTitle, size, droppable, isOpen
             isTitle ?
                 <div 
                 to={to || '/'} 
-                className={`drawer-item${icon ? ' drawer-has-icon' : ''} drawer-item-title${size ? ` drawer-item-title-${size}` : ''}`}
+                className={`drawer-item${icon || image ? ' drawer-has-icon' : ''} drawer-item-title${size ? ` drawer-item-title-${size}` : ''}`}
                 >
-                    {icon ? <span className="drawer-item-icon">{icon}</span> : null}
-                    <div className="drawer-item-label">
+                    { icon && !image ? <span className="drawer-item-icon">{icon}</span> : null }
+                    { !icon && image ? <div className="drawer-item-img"><Avatar image={image} width="21px" height="21px" name={label} /></div> : null }
+                    <span className="drawer-item-label">
                         {label}
-                    </div>
+                    </span>
                 </div>
             :
                 <Link 
                     to={to || '/'} 
-                    className={`drawer-item${icon ? ' drawer-has-icon' : ''}`}
+                    className={`drawer-item${icon || image ? ' drawer-has-icon' : ''}`}
                     onClick={closeDrawer}
                 >
-                    {icon ? <span className="drawer-item-icon">{icon}</span> : null}
-                    <div className="drawer-item-label">
+                    { icon && !image ? <span className="drawer-item-icon">{icon}</span> : null }
+                    { !icon && image ? <div className="drawer-item-img"><Avatar image={image} width="21px" height="21px" name={label} /></div> : null }
+                    <span className="drawer-item-label">
                         {label}
-                    </div>
-                    {count ? <div className="drawer-item-count">{count}</div> : null}
+                    </span>
+                    {count ? <div className="drawer-item-count">{count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div> : null}
                 </Link>
         :
             <div className={open ? 'drawer-item-open' : undefined }>
                 <div 
-                    className={`drawer-item drawer-droppable-item${icon ? ' drawer-has-icon' : ''}${isTitle ? ' drawer-item-title' : ''}`}
+                    className={`drawer-item drawer-droppable-item${icon || image ? ' drawer-has-icon' : ''}${isTitle ? ' drawer-item-title' : ''}`}
                     onClick={() => setOpen(!open)}
                 >
-                    {icon ? <span className="drawer-item-icon">{icon}</span> : null}
-                    <div className="drawer-item-label">
+                    { icon && !image ? <span className="drawer-item-icon">{icon}</span> : null }
+                    { !icon && image ? <div className="drawer-item-img"><Avatar image={image} width="21px" height="21px" name={label} /></div> : null }
+                    <span className="drawer-item-label">
                         {label}
-                    </div>
+                    </span>
                     <div className="drawer-item-drop">{droppable}</div> 
                 </div>
                 {open ?
