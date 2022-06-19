@@ -6,7 +6,14 @@
     justify-content: center;
     flex-direction: column;
     flex-grow: 1;
-    transform: scale(0.85);
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+}
+
+.bottom-navigation-action:hover,
+.bottom-navigation-action:active {
+    background-color: transparent;
 }
 
 .bottom-navigation-action-icon {
@@ -26,5 +33,4 @@
 .bottom-navigation-action.bottom-navigation-action-active {
     color: var(--color-primary);
     fill: var(--color-primary);
-    transform: none;
 }

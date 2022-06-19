@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './styles/BottomNavigationAction.css'
 
 
@@ -8,10 +8,14 @@ const BottomNavigationAction = ({
     to,
     active,
 }) => {
+    const navigate = useNavigate();
+
     return (
-        <Link
+        <div
             className={`bottom-navigation-action ${active ? ' bottom-navigation-action-active' : ''}`}
-            to={to}
+            onClick={() => {
+                navigate(to);
+            }}
         >
             {icon &&
                 <div className="bottom-navigation-action-icon">
@@ -21,7 +25,7 @@ const BottomNavigationAction = ({
             <div className="bottom-navigation-action-label">
                 {label}
             </div>
-        </Link>
+        </div>
     )
 }
 
