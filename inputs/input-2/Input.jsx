@@ -13,9 +13,11 @@ const Input = ({
     disabled,
     autoComplete,
     icon,
+    variant,
+    resize
 }) => {
     return (
-        <div className={`input-container${error ? ' input-danger' : ''}${success ? ' input-success' : ''}`}>
+        <div className={`input-container${error ? ' input-danger' : ''}${success ? ' input-success' : ''}${variant ? ` input-${variant}` : ''}${resize ? ' input-resize' : ''}`}>
             <input
                 className={`${error ? 'input-danger' : ''}${success ? ' input-success' : ''}`}
                 type={type}
