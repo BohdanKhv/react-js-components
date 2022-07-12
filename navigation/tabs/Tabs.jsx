@@ -45,23 +45,3 @@ const Tabs = ({items, active, onChange}) => {
 }
 
 export default Tabs
-
-// !Example of usage:
-{/* <Tabs
-    onChange={setActiveTab}
-    active={activeTab}
-    items={[
-        {
-            label: 'Home',
-            icon: homeIcon,
-        },
-        {
-            label: 'Grid',
-            icon: gridIcon,
-        },
-        {
-            label: 'Arrow',
-            icon: arrowIcon,
-        },
-    ]}
-/> */}

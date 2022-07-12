@@ -1,9 +1,12 @@
 .tabs {
     position: relative;
+    min-width: 0;
 }
 .tabs-container {
     display: flex;
     align-items: center;
+    border-bottom: 2px solid var(--color-border);
+    width: fit-content;
 }
 
 .tabs-indicator {
@@ -11,6 +14,7 @@
     height: 2px;
     position: absolute;
     transition-duration: var(--transition-duration);
+    bottom: 0px;
 }
 
 .tab {
